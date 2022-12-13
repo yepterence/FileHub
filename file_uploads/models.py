@@ -1,11 +1,18 @@
+import uuid
+
 from django.db import models
 
 
-class File(models.Model):
-    name = models.CharField(max_length=50)
+def custom_path(instance, filename):
+    return f'{instance.unique_identifier}/{filename}'
+
+
+class UploadedFile(models.Model):
+    text = models.CharField(max_length=100, default='', blank=False)
     number = models.IntegerField()
-    file = models.FileField(upload_to='files/')
+    unique_identifier = models.UUIDField(default=uuid.uuid4)
+    file = models.FileField(upload_to=custom_path)
     time_uploaded = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.number + '-' + self.name
+        return f"{self.text}: {self.file.name}"

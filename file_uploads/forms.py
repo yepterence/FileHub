@@ -1,8 +1,15 @@
 from django import forms
-from .models import File
+from .models import UploadedFile
 
 
-class UploadFileForm(forms.ModelForm):
+class UploadedFileForm(forms.ModelForm):
     class Meta:
-        model = File
-        fields = ('name', 'number', 'file')
+        model = UploadedFile
+        fields = ('text', 'number', 'file', 'unique_identifier')
+        widgets = {
+            'text': forms.TextInput(attrs={'class': 'form-control'}),
+            'number': forms.NumberInput(attrs={'class': 'form-control'}),
+            'unique_identifier': forms.HiddenInput(),
+            'file': forms.FileInput(attrs={'readonly': 'readonly'}),
+
+        }
