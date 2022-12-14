@@ -11,7 +11,7 @@ from utils import utils
 def upload_file(request):
     """Display form for file upload and perform processing on file"""
 
-    process_results = None
+    process_results = ''
     if request.method == 'POST':
 
         session_expiration_time = 60 * 30  # 30-minute session expiry window

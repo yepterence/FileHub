@@ -20,42 +20,19 @@
     <section class="margin-top bg-gradient-light">
       <h2 class="text-center">Upload a file</h2>
       <div class="container ">
-          <div class="form-row justify-content-center">
-            <div class="col-md-6">
-              <form method="post" enctype="multipart/form-data">
-                {% csrf_token %}
-                <div class="form-group">
-                  <label for="id_text">Text:</label>
-                  <input type="text" name="text" class="form-control" maxlength="100" id="id_text" placeholder="eg. Some text"required>
-                  <div class="invalid-feedback">
-                    Please add text.
-                  </div>
-
-                </div>
-                <div class="form-group">
-                  <div class="form-group col-md-3">
-                    <label for="id_number">Number:</label>
-                    <input type="number" name="number" class="form-control" id="id_number" placeholder="1" required>
-                    <div class="invalid-feedback">
-                      Please add numbers only.
-                    </div>
-                  </div>
-                </div>
-                  <div class="form-group">
-                    <div class="form-control"><label for="id_file">File:</label>
-                      <input type="file" name="file" readonly="readonly" required="" id="id_file">
-                      <input type="hidden" name="unique_identifier" value="" id="id_unique_identifier">
-                      <input type="hidden" name="initial-unique_identifier" value="" id="initial-id_unique_identifier">
-                      <div class="invalid-feedback">
-                        Please upload a file (eg. txt, pdf).
-                      </div>
-                    </div>
-                  </div>
-                  <button type="submit" class="btn btn-primary" value="Submit">Upload</button>
-              </form>
-            </div>
+        <div class="form-row justify-content-center">
+          <div class="col-md-6">
+            <form method="post" enctype="multipart/form-data">
+              {% csrf_token %}
+              {{form.as_p}}
+              <button type="submit" class="btn btn-primary" value="Submit">Upload</button>
+            </form>
           </div>
         </div>
+      </div>
+      <div class="container">
+        {{process_results}}
+      </div>
     </section>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   </body>
