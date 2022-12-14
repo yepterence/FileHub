@@ -12,7 +12,8 @@ This application allows the user to upload files and store them on the server.
 - Created backend for the application using Django and Python.
 - Files were saved to a UUID folder server based on session using Django's Sessions and request built-in framework. 
 - A bash program was included to perform processing after the user uploads the file. This was accomplished using Python's subprocess library.
-- Information was presented to user using a combination of HTML5/BootstrapCSS. 
+- Information was presented to user using a combination of HTML5/BootstrapCSS. <br>
+Note: See uploaded Design document and associated source code for more information on implementation.
 
 ### How to Launch the Application
 - Clone this repo to your local.
@@ -23,5 +24,6 @@ This application allows the user to upload files and store them on the server.
 
 ### How it works
 - Access the website using the address above. 
-- Fill out the form: ![filled-out.png](pics/filled-out.png)
+- Fill out the form: <br>
+![filled-out.png](pics/filled-out.png)
 - Navigate to uploads folder in FileHub home directory. A single file will exist within a UUID labeled folder.
