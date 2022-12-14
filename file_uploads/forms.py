@@ -3,6 +3,7 @@ from .models import UploadedFile
 
 
 class UploadedFileForm(forms.ModelForm):
+    """ModelForm for Uploaded File model."""
     class Meta:
         model = UploadedFile
         fields = ('text', 'number', 'file', 'unique_identifier')
