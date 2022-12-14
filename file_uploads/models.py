@@ -10,6 +10,7 @@ def custom_path(instance, filename):
 class UploadedFile(models.Model):
     text = models.CharField(max_length=100, default='', blank=False)
     number = models.IntegerField()
+    session_id = models.CharField(max_length=100, default='', blank=False)
     unique_identifier = models.UUIDField(default=uuid.uuid4)
     file = models.FileField(upload_to=custom_path)
     time_uploaded = models.DateTimeField(auto_now_add=True)

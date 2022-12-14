@@ -10,6 +10,7 @@ class UploadedFileForm(forms.ModelForm):
             'text': forms.TextInput(attrs={'class': 'form-control'}),
             'number': forms.NumberInput(attrs={'class': 'form-control'}),
             'unique_identifier': forms.HiddenInput(),
+            'session_id': forms.HiddenInput(),
             'file': forms.FileInput(attrs={'readonly': 'readonly'}),
 
         }
