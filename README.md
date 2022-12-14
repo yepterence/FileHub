@@ -23,5 +23,5 @@ This application allows the user to upload files and store them on the server.
 
 ### How it works
 - Access the website using the address above. 
-- Fill out the form: ![filled-out.png](..%2FPictures%2Ffilled-out.png)
+- Fill out the form: ![filled-out.png](pics/filled-out.png)
 - Navigate to uploads folder in FileHub home directory. A single file will exist within a UUID labeled folder.
